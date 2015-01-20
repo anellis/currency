@@ -56,7 +56,15 @@ class CurrencyTest <Minitest::Test
   def test_currency_code_error
     rich= Currency.new(150, "USD")
     middle_class= Currency.new(50, "ARS")
-    assert_raises rich + middle_class
-    assert_raises rich _ middle_class
+    begin
+      rich + middle_class
+    rescue Exception => ex
+      assert_equal DifferentCurrencyCodeError, ex.class
+    end
+  end
+
+  def test_can_be_multiplied_by_fixnum_or_float
+    unnecessarily_wealthy= Currency.new(500, "ARS")
+    assert_equal 5000, unnecessarily_wealthy*10
   end
 end

@@ -12,13 +12,23 @@ class Currency
   end
 
   def +(currency)
+    if code == currency.code
       total = amount + currency.amount
+    else
+      raise DifferentCurrencyCodeError, "You cannot add two currencies with different codes"
+    end
   end
 
   def -(currency)
-    total = amount - currency.amount
-    return total
+    if code == currency.code
+      total = amount - currency.amount
+    else
+      raise DifferentCurrencyCodeError, "You cannot subtract two currencies with different codes" 
+    end
   end
 
 
+end
+
+class DifferentCurrencyCodeError<StandardError
 end
