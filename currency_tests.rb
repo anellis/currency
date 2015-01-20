@@ -32,6 +32,6 @@ class CurrencyTest <Minitest::Test
   def test_two_currencies_with_same_amount_and_code_are_equal
     dollar= Currency.new(1, "USD")
     another_dollar= Currency.new(1, "USD")
-    assert dollar== another_dollar
+    assert dollar.equal(another_dollar)
   end
 end
