@@ -27,10 +27,9 @@ class Currency
     end
   end
 
-  # def *(currency)
-  #   if code == currency.code
-  #     total = amount * currency.amount
-  #   end
+  def *(number)
+      total = amount * number
+  end
 
 end
 
