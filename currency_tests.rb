@@ -52,4 +52,11 @@ class CurrencyTest <Minitest::Test
     middle_class= Currency.new(50, "USD")
     assert_equal 100, rich - (middle_class)
   end
+
+  def test_currency_code_error
+    rich= Currency.new(150, "USD")
+    middle_class= Currency.new(50, "ARS")
+    assert_raises rich + middle_class
+    assert_raises rich _ middle_class
+  end
 end

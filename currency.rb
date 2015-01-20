@@ -12,8 +12,7 @@ class Currency
   end
 
   def +(currency)
-    total = amount + currency.amount
-    return total
+      total = amount + currency.amount
   end
 
   def -(currency)
