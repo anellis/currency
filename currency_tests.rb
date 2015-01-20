@@ -2,6 +2,12 @@ require 'minitest/autorun'
 require 'minitest/pride'
 require './currency'
 
+# If you are attempting Hard Mode, finish Normal Mode first, then branch your code.
+#
+# Given what you've learned thus far about object-oriented programming, remove the DifferentCurrencyCodeError. Make it possible to add two currency objects from different codes together. The result should be another Currency object with the first of the two codes. For instance, if a dollar is worth 100 yen, then 1 dollar plus 1000 yen should return an object representing 11 dollars.
+#
+# There are right ways to do this, wrong ways to do this, and okay ways to do this. Take your best shot, but continue using TDD!!
+
 class CurrencyTest <Minitest::Test
   def test_currency_class_exists
     assert Currency
@@ -49,5 +55,11 @@ class CurrencyTest <Minitest::Test
     unnecessarily_wealthy= Currency.new(500, "ARS")
     assert_equal 5000, unnecessarily_wealthy*10
     assert_equal 5100, unnecessarily_wealthy*10.2
+  end
+
+  def test_add_two_currencies
+    american_money= Currency.new(150, "USD" )
+    japanese_money= Currency.new(100, "JPY")
+    assert_equal american_money + japanese_money= Currency.new(151, "USD")
   end
 end
