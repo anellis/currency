@@ -28,7 +28,8 @@ class Currency
   end
 
   def *(number)
-      total = amount * number
+    new_amount= amount*number
+    Currency.new(new_amount, code)
   end
 
 end
