@@ -32,7 +32,7 @@ class CurrencyTest <Minitest::Test
   def test_two_currencies_with_same_amount_and_code_are_equal
     dollar= Currency.new(1, "USD")
     another_dollar= Currency.new(1, "USD")
-    assert dollar.equal(another_dollar)
+    assert dollar == (another_dollar)
   end
 
   # def test_two_currencies_with_different_amount_are_not_equal
@@ -44,6 +44,6 @@ class CurrencyTest <Minitest::Test
   def test_two_curriences_can_be_added
     poor= Currency.new(1, "USD")
     rich= Currency.new(100, "USD")
-    assert equal 101, poor + rich
+    assert_equal 101, poor + (rich)
   end
 end

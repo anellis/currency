@@ -1,16 +1,20 @@
 class Currency
+  attr_reader :amount, :code
   def initialize(amount,code)
     @amount=amount
     @code=code
   end
 
-  def equal(currency)
-    if @amount == @amount && @code==@code
-      equal= true
-    else
-      equal= false
+  def ==(currency)
+    if @amount == currency.amount && @code== currency.code
+      return true
     end
-    equal
   end
+
+  def +(currency)
+    total = amount + currency.amount
+    return total
+  end
+
 
 end
