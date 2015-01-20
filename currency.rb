@@ -6,9 +6,11 @@ class Currency
 
   def equal(currency)
     if @amount == @amount && @code==@code
-      return true
+      equal= true
+    else
+      equal= false
     end
-
+    equal
   end
 
 end
