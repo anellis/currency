@@ -46,4 +46,10 @@ class CurrencyTest <Minitest::Test
     rich= Currency.new(100, "USD")
     assert_equal 101, poor + (rich)
   end
+
+  def test_two_curriences_can_be_subtracted
+    rich= Currency.new(150, "USD")
+    middle_class= Currency.new(50, "USD")
+    assert_equal 100, rich - (middle_class)
+  end
 end
