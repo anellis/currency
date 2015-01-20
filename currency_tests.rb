@@ -66,5 +66,6 @@ class CurrencyTest <Minitest::Test
   def test_can_be_multiplied_by_fixnum_or_float
     unnecessarily_wealthy= Currency.new(500, "ARS")
     assert_equal 5000, unnecessarily_wealthy*10
+    assert_equal 5100, unnecessarily_wealthy*10.2
   end
 end

@@ -23,10 +23,14 @@ class Currency
     if code == currency.code
       total = amount - currency.amount
     else
-      raise DifferentCurrencyCodeError, "You cannot subtract two currencies with different codes" 
+      raise DifferentCurrencyCodeError, "You cannot subtract two currencies with different codes"
     end
   end
 
+  # def *(currency)
+  #   if code == currency.code
+  #     total = amount * currency.amount
+  #   end
 
 end
 
