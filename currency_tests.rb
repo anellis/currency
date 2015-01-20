@@ -26,6 +26,6 @@ class CurrencyTest <Minitest::Test
   end
 
   def test_currency_has_amount_and_code
-    dollar= Currency.new(1, USD)
+    dollar= Currency.new(1, "USD")
   end
 end
