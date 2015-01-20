@@ -47,7 +47,7 @@ class Currency
         elsif currency.code == "NZD"
           @conversion_rate = 0.76730
         elsif currency.code == "ZAR"
-          @conversion_rate = 0.08625
+          @conversion_rate =  0.08625
         elsif currency.code == "CAD"
           @conversion_rate = 0.82585
         elsif currency.code == "AUD"
@@ -85,7 +85,8 @@ class Currency
   end
 
   def *(number)
-      total = amount * number
+    new_amount= amount*number
+    Currency.new(new_amount, code)
   end
 
 
