@@ -6,6 +6,7 @@ class Currency
   def initialize(amount,code)
     @amount=amount
     @code=code
+    @currency_rates= {USD: 1.0, EUR: 0.74}
   end
 
   def ==(currency)
@@ -35,4 +36,9 @@ class Currency
     Currency.new(new_amount, code)
   end
 
+  def convert(currency, code)
+    if code==currency.code && amount== currency.amount
+      Currency.new(amount, code)
+    end
+  end
 end
