@@ -63,11 +63,11 @@ class CurrencyTest <Minitest::Test
   def test_currency_converter_class_exists
     assert CurrencyConverter
   end
-  #
-  # def test_initialized_with_hash
-  #   new_money= CurrencyConverter.new({USD: 1.0, EUR: 0.74})
-  #   assert_equal ({USD:1.0, EUR:0.74}), new_money.conversion_rates
-  # end
+  
+  def test_initialized_with_hash
+    new_money= CurrencyConverter.new({USD: 1.0, EUR: 0.74})
+    assert_equal ({USD:1.0, EUR:0.74}), new_money.conversion_rates
+  end
 
   def test_convert_of_same_code
     currency=CurrencyConverter.new({USD: 1.0, EUR: 0.74})
@@ -81,10 +81,7 @@ class CurrencyTest <Minitest::Test
     assert_equal Currency.new(0.74, :EUR), currency.convert(currency1, :EUR)
     # assert_equal currency1.convert(:JPY), Currency.new(120, )
   end
-  # Should be able to be created with a Hash of three or more currency codes and conversion rates.
-  # An example would be this: {USD: 1.0, EUR: 0.74, JPY: 120.0}, which implies that a
-  # dollar is worth 0.74 euros and that a dollar is worth 120 yen, but also that a
-  # euro is worth 120/0.74 = 162.2 yen.
+
   def test_can_have_three_or_more_codes
     currency= CurrencyConverter.new({USD: 1.0, EUR: 0.74, JPY: 120.0})
     currency1= Currency.new(1, :USD)
