@@ -98,4 +98,8 @@ class CurrencyTest <Minitest::Test
       currency.convert(currency1, :GBP)
     end
   end
+
+  def test_currency_should_take_symbol_parameter
+    currency= Currency.new(1, $)
+    assert_equals Currency.new(1, "USD"), currency
 end
