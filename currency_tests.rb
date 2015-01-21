@@ -68,8 +68,8 @@ class CurrencyTest <Minitest::Test
   end
 
   def test_convert_method_is_present
-    currency1= Currency.new(0.74, :EUR)
-    currency2=Currency.new(1, :USD)
-    assert_equal currency2.convert(currency2, :USD), Currency.new(1, :USD)
+    currency1=Currency.new(1, :USD)
+    assert_equal currency1.convert(:USD), Currency.new(1, :USD)
+    assert_equal currency1.convert(:EUR), Currency.new(0.74, :EUR)
   end
 end

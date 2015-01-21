@@ -36,8 +36,8 @@ class Currency
     Currency.new(new_amount, code)
   end
 
-  def convert(currency, code)
-    if code==currency.code && amount== currency.amount
+  def convert(other_code)
+    if self.code==other_code
       Currency.new(amount, code)
     end
   end
