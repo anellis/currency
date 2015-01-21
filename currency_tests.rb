@@ -86,10 +86,11 @@ class CurrencyTest <Minitest::Test
   # dollar is worth 0.74 euros and that a dollar is worth 120 yen, but also that a
   # euro is worth 120/0.74 = 162.2 yen.
   def test_can_have_three_or_more_codes
-    currency_convert= CurrencyConverter.new({USD: 1.0, EUR: 0.74, JPY: 120.0})
+    currency= CurrencyConverter.new({USD: 1.0, EUR: 0.74, JPY: 120.0})
     currency1= Currency.new(1, :USD)
     currency2= Currency.new(0.74, :EUR)
 
     assert_equal Currency.new(0.74, :EUR), currency.convert(currency1, :EUR)
-    assert_equal Currency.new(162.2, :JPY), currency.conver(currency2, :JPY)
+    assert_equal Currency.new(162.2, :JPY), currency.convert(currency2, :JPY)
+  end
 end
