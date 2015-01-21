@@ -17,12 +17,6 @@ class CurrencyTest <Minitest::Test
     assert dollar == (another_dollar)
   end
 
-  # def test_two_currencies_with_different_amount_are_not_equal
-  #   dollar= Currency.new(1, "USD")
-  #   yen=Currency.new(1,"JPY")
-  #   assert !dollar.equal(yen)
-  # end
-
   def test_two_curriences_can_be_added
     poor= Currency.new(1, "USD")
     rich= Currency.new(100, "USD")
@@ -55,7 +49,7 @@ class CurrencyTest <Minitest::Test
   def test_add_two_different_currencies
     american_money= Currency.new(150, "USD" )
     japanese_money= Currency.new(100, "JPY")
-    assert_equal Currency.new(150.842, "USD"),american_money + (japanese_money)
+    assert_equal Currency.new(150.842, "USD"), american_money + (japanese_money)
   end
 
 
