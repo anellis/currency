@@ -1,12 +1,24 @@
 class DifferentCurrencyCodeError<StandardError
 end
 
+
 class Currency
   attr_reader :amount, :code
-  def initialize(amount,code)
+  def initialize(amount,code=nil)
+    @code=code
     @amount=amount
     @code=code
+    convert_symbol
   end
+
+  def convert_symbol
+  if amount.class==String
+    symbol_hash= {"$"=> :USD, "€"=> :EUR,"¥"=> :JPY}
+    symbol=amount[0]
+    @code=symbol_hash[symbol]
+    @amount=amount[1..-1].to_i
+  end
+end
 
   def ==(currency)
     if @amount == currency.amount && @code == currency.code
